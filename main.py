@@ -5,7 +5,7 @@ pygame.init()
 
 width, height = 600, 400
 screen = pygame.display.set_mode((width, height))
-pygame.display.set_caption("Rock Paper Scissors")
+pygame.display.set_caption("Rock Paper Scissors Game with AI")
 
 white = (255, 255, 255)
 navy = (0, 0, 128)
@@ -56,7 +56,7 @@ running = True
 while running:
     screen.fill(white)
     
-    draw_text("Rock Paper Scissors AI", 150, 40, blue)
+    draw_text("Rock Paper Scissors AI", 170, 40, blue)
 
     pygame.draw.rect(screen, pink, rock_button)
     draw_text("Rock", rock_button.x + 50, rock_button.y + 15)

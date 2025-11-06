@@ -75,15 +75,12 @@ while running:
         draw_text("AI chose: " + ai_pick, 200, 190)
         draw_text(result, 260, 230, blue)
 
-    # handle events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         
         elif event.type == pygame.MOUSEBUTTONDOWN:
-            mouse_x, mouse_y = event.pos
-            
-            # check which button was clicked
+            mouse_x, mouse_y = event.pos 
             if rock_button.collidepoint(mouse_x, mouse_y):
                 player_pick = "rock"
             elif paper_button.collidepoint(mouse_x, mouse_y):
@@ -91,12 +88,10 @@ while running:
             elif scissors_button.collidepoint(mouse_x, mouse_y):
                 player_pick = "scissors"
             
-            # if a button was clicked, play the game
             if player_pick != "":
                 ai_pick = get_ai_choice()
                 past_moves.append(player_pick)
                 
-                # check who wins
                 if player_pick == ai_pick:
                     result = "Draw!"
                 elif player_pick == "rock" and ai_pick == "scissors":
